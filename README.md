@@ -16,33 +16,16 @@ An immersive, interactive 3D Christmas experience powered by **Three.js** and **
 
 ## 🚀 Getting Started
 
-### Prerequisites
-
-Because this project uses ES Modules (`import`), it **cannot** be run directly by double-clicking the HTML file (`file://` protocol) due to browser security restrictions (CORS). **You must run it on a local server.**
-
 ### Installation & Running
 
 1.  **Download the project:**
-    Ensure `christmas_tree_pro.html` is in your project folder.
+    Save the file as `Christmas_Tree.html` in your project folder.
 
-2.  **Start a Local Server:**
-    You can use any method below to serve the directory:
+2.  **Open the File:**
+    Simply **double-click** `Christmas_Tree.html` to launch it in your default web browser.
+    *(Note: An active internet connection is required to load the 3D engine and AI models).*
 
-      * **VS Code (Recommended):** Install the "Live Server" extension, right-click the HTML file, and select "Open with Live Server".
-      * **Python:**
-        ```bash
-        # Run inside the project directory
-        python -m http.server 8000
-        ```
-      * **Node.js (http-server):**
-        ```bash
-        npx http-server
-        ```
-
-3.  **Open in Browser:**
-    Navigate to `http://localhost:8000/christmas_tree_pro.html` (or the port provided by your server).
-
-4.  **Grant Permissions:**
+3.  **Grant Permissions:**
     Allow camera access when prompted to enable gesture controls.
 
 ## 🖐️ Gesture Controls
@@ -66,14 +49,14 @@ Click the **"Select Files"** or **"Select Folder"** buttons in the top-right cor
 
 ### Method 2: Local Directory
 
-Create a folder named `images` in the root directory. Rename your photos numerically (e.g., `(1).jpg`, `(2).png`). The system is configured to scan for:
+Create a folder named `images` in the same directory as the HTML file. Rename your photos numerically (e.g., `(1).jpg`, `(2).png`). The system is configured to scan for:
 
   * `./images/(1).jpg` to `./images/(200).jpg`
   * `./images/(1).png` to `./images/(200).png`
 
 ## ⚙️ Configuration
 
-You can customize the visual parameters by editing the `CONFIG` object inside the `<script>` tag in `christmas_tree_pro.html`:
+You can customize the visual parameters by editing the `CONFIG` object inside the `<script>` tag in `Christmas_Tree.html`:
 
 ```javascript
 const CONFIG = {
