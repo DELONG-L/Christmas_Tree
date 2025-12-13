@@ -1,2 +1,110 @@
-# Christmas_tree
-An interactive 3D particle Christmas tree powered by Three.js and MediaPipe, featuring real-time hand gesture control and a dynamic photo gallery.
+# Grand Luxury Tree - Christmas Edition 🎄
+
+An immersive, interactive 3D Christmas experience powered by **Three.js** and **MediaPipe**. This project visualizes a luxury particle tree that transforms into a photo gallery, controlled entirely by hand gestures via your webcam.
+
+  
+
+## ✨ Features
+
+  * **3D Particle System:** A dynamic tree composed of thousands of glowing particles, snow, and ornaments.
+  * **Gesture Control:** Use hand gestures (via Webcam) to control the animation states (Tree, Scatter, Focus).
+  * **Photo Integration:**
+      * Upload local files or folders directly via the UI.
+      * Automatically scans a local `./images/` directory.
+  * **Visual Effects:** High-end post-processing including Unreal Bloom, cinematic lighting, and atmospheric fog.
+  * **Responsive Design:** Adapts to window resizing automatically.
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+Because this project uses ES Modules (`import`), it **cannot** be run directly by double-clicking the HTML file (`file://` protocol) due to browser security restrictions (CORS). **You must run it on a local server.**
+
+### Installation & Running
+
+1.  **Download the project:**
+    Ensure `christmas_tree_pro.html` is in your project folder.
+
+2.  **Start a Local Server:**
+    You can use any method below to serve the directory:
+
+      * **VS Code (Recommended):** Install the "Live Server" extension, right-click the HTML file, and select "Open with Live Server".
+      * **Python:**
+        ```bash
+        # Run inside the project directory
+        python -m http.server 8000
+        ```
+      * **Node.js (http-server):**
+        ```bash
+        npx http-server
+        ```
+
+3.  **Open in Browser:**
+    Navigate to `http://localhost:8000/christmas_tree_pro.html` (or the port provided by your server).
+
+4.  **Grant Permissions:**
+    Allow camera access when prompted to enable gesture controls.
+
+## 🖐️ Gesture Controls
+
+This project uses **MediaPipe Hand Landmarker** to track your hand in real-time. Ensure your hand is visible in the webcam preview (bottom left).
+
+| Gesture | Action | Description |
+| :--- | :--- | :--- |
+| **Fist ✊** | **Tree Mode** | Particles assemble into the Christmas tree shape. |
+| **Open Hand ✋** | **Scatter Mode** | Particles and photos explode outward and rotate with your hand. |
+| **Pinch 👌** | **Focus Mode** | (Thumb & Index) Selects a random photo and brings it to the front. |
+
+  * **Keyboard Shortcut:** Press `H` to hide/show the UI and Webcam overlay.
+  * **Mouse:** Left-click and drag to rotate the view (OrbitControls).
+
+## 🖼️ Adding Photos
+
+### Method 1: UI Upload
+
+Click the **"Select Files"** or **"Select Folder"** buttons in the top-right corner to load images immediately.
+
+### Method 2: Local Directory
+
+Create a folder named `images` in the root directory. Rename your photos numerically (e.g., `(1).jpg`, `(2).png`). The system is configured to scan for:
+
+  * `./images/(1).jpg` to `./images/(200).jpg`
+  * `./images/(1).png` to `./images/(200).png`
+
+## ⚙️ Configuration
+
+You can customize the visual parameters by editing the `CONFIG` object inside the `<script>` tag in `christmas_tree_pro.html`:
+
+```javascript
+const CONFIG = {
+    colors: {
+        bg: 0x050d1a,         // Background color
+        champagneGold: 0xffd966,
+        // ...
+    },
+    particles: {
+        count: 1500,          // Number of ornaments
+        snowCount: 1000,      // Snow density
+        treeHeight: 24,
+        // ...
+    },
+    // ...
+};
+```
+
+## 🛠️ Tech Stack
+
+  * **Three.js:** 3D Rendering, Geometry, Materials.
+  * **Post-processing:** UnrealBloomPass for the glowing effect.
+  * **MediaPipe:** Real-time AI hand tracking.
+  * **HTML5/CSS3:** UI overlay and styling.
+
+## 📝 Credits
+
+  * **Original Concept:** Grand Luxury Tree
+  * **Modifications & Refactoring:** Delong-L
+  * **Assets:** Unsplash (Demo Images)
+
+-----
+
+*Merry Christmas\!* 🎅
